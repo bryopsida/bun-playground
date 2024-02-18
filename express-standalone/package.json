@@ -1,0 +1,20 @@
+{
+  "name": "express-standalone",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^4.17.21",
+    "@types/supertest": "^6.0.2",
+    "supertest": "^6.3.4"
+  },
+  "scripts": {
+    "build": "bun build --target=bun --compile  --outfile express-test index.ts"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,21 @@
+name: Express Standalone
+on:
+    push:
+        paths:
+            - express-standalone/*
+            - .github/workflows/express-standalone.yml
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
+        working-directory: express-standalone
+      - run: bun run build
+        working-directory: express-standalone
+      - run: bun test
+        working-directory: express-standalone
+      - run: docker buildx build . -t express-standalone:local
+        working-directory: express-standalone
