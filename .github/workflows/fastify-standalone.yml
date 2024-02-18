@@ -1,0 +1,21 @@
+name: Fastify Standalone
+on:
+    push:
+        paths:
+            - fastify-standalone/*
+            - .github/workflows/fastify-standalone.yml
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
+        working-directory: fastify-standalone
+      - run: bun run build
+        working-directory: fastify-standalone
+      - run: bun test
+        working-directory: fastify-standalone
+      - run: docker buildx build . -t fastify-standalone:local
+        working-directory: fastify-standalone

@@ -1,0 +1,17 @@
+{
+  "name": "fastify-standalone",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build --target=bun --compile  --outfile fastify-test index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "fastify": "^4.26.1"
+  }
+}
