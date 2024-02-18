@@ -15,3 +15,5 @@ jobs:
         working-directory: crypto-standalone
       - run: bun run build
         working-directory: crypto-standalone
+      - run: docker buildx build . -t crypto-standalone:local
+        working-directory: crypto-standalone
