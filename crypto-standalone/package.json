@@ -1,0 +1,14 @@
+{
+  "name": "crypto-standalone",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build --target=bun --compile  --outfile crypto-test index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
